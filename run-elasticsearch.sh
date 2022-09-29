@@ -8,7 +8,7 @@ if [[ -z $STACK_VERSION ]]; then
 fi
 
 PLUGIN_INSTALL_CMD=""
-PLUGIN_STR=`echo ${PLUGINS} | sed -e 's/\n//g'`
+PLUGINS_STR=`echo ${PLUGINS} | sed -e 's/\n//g'`
 
 if [ -n "${PLUGINS_STR}" ]; then
   ARRAY=(${PLUGINS_STR})
