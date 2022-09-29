@@ -35,6 +35,8 @@ do
     --env "ES_JAVA_OPTS=-Xms1g -Xmx1g" \
     --env "xpack.security.enabled=false" \
     --env "xpack.license.self_generated.type=basic" \
+    --env "http.port=${port}" \
+    --env "action.destructive_requires_name=false" \
     --ulimit nofile=65536:65536 \
     --ulimit memlock=-1:-1 \
     --publish "${port}:9200" \
@@ -42,9 +44,8 @@ do
     --network=elastic \
     --name="es${node}" \
     --entrypoint="" \
-
-docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION} \
-  /bin/sh -vc "${PLUGIN_INSTALL_CMD} /usr/local/bin/docker-entrypoint.sh"
+    docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION} \
+    /bin/sh -vc "${PLUGIN_INSTALL_CMD} /usr/local/bin/docker-entrypoint.sh"
 done
 
 docker run \
