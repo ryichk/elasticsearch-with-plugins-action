@@ -1,5 +1,5 @@
 name: 'Run Elasticsearch'
-description: : 'This action spins up an Elasticsearch instance that can be accessed and used in your subsequent steps.'
+description: 'This action spins up an Elasticsearch instance that can be accessed and used in your subsequent steps.'
 author: 'ryichk'
 
 branding:
